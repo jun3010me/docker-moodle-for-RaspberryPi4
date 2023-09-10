@@ -15,6 +15,9 @@ docker-compose up -d
 ```
 これで80番ポートでアクセスすると、moodleが起動しているはず。
 
+username:user
+password:bitnami
+
 ## ファイルの引用元
 bitnamiのmoodleのイメージはこちらから。
 
