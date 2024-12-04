@@ -4,7 +4,7 @@
 version: '2'
 services:
   mariadb:
-    image: docker.io/bitnami/mariadb:10.6
+    image: docker.io/bitnami/mariadb:11.4
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
@@ -15,7 +15,7 @@ services:
     volumes:
       - 'mariadb_data:/bitnami/mariadb'
   moodle:
-    image: docker.io/bitnami/moodle:4.2
+    image: docker.io/bitnami/moodle:4.5
     ports:
       - '80:8080'
       - '443:8443'
@@ -26,6 +26,9 @@ services:
       - MOODLE_DATABASE_NAME=bitnami_moodle
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
+      - LANG=ja_JP.UTF-8
+      - LANGUAGE=ja_JP:ja
+      - LC_ALL=ja_JP.UTF-8
     volumes:
       - 'moodle_data:/bitnami/moodle'
       - 'moodledata_data:/bitnami/moodledata'
